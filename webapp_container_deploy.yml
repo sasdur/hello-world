@@ -5,7 +5,7 @@
      - name: stop previous version docker
        shell: docker stop sasdevops_demo
 
-     - name: remove stopped container
+     - name: remove stopped containers
        shell: docker rm -f sasdevops_demo	  
 
      - name: remove docker images
