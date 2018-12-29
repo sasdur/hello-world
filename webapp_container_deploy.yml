@@ -9,7 +9,7 @@
        shell: docker rm -f sasdevops_demo	  
 
      - name: remove docker images
-       shell: docker image rm -f sasdevops/sasdevops_demo
+       shell: docker image rm -f sasdevops/docker-versioning-webapp-deploy:latest
        
      - name: create docker image
-       shell: docker run -d --name sasdevops_demo -p 8085:8080 sasdevops/sasdevops_demo
+       shell: docker run -d --name sasdevops_demo -p 8085:8080 sasdevops/docker-versioning-webapp-deploy:latest

@@ -1,4 +1,4 @@
-<h1> Docker Deployment  via CICD pipeline !!!</h1>
+<h1> Docker Deployment  via CICD pipeline with the Versioning **</h1>
 <h2> Testing Deployment every 2 minutes/ 24 X7 </h2>
 <h2> Happy learning </h2>
 
