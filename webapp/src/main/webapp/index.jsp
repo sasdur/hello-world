@@ -2,8 +2,7 @@
 <h2> Testing Deployment every 2 minutes/ 24 X7 </h2>
 <h2> Happy Learning </h2>
 
-<h2> Thank you </h2>
-<h2> ..............................................................................................................</h2>
+<h2> Thank you !!!! </h2>
 
 n =  new Date();
 y = n.getFullYear();
