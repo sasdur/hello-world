@@ -1,6 +1,6 @@
 <h1> Docker  -- Deployment  (via ) CICD pipeline with the Versioning</h1>
 <h2> Testing Deployment every 2 minutes/ 24 X7 </h2>
-<h2> Happy Learning and Good Luck !!!  March 25th </h2>
+<h2> Happy Learning and Good Luck !!!  March 25th 2019 Hi Rajan </h2>
 
 <h2> Thank you </h2>
 <h2> +++++++++++++++++++++++++++++++++++++</h2>
