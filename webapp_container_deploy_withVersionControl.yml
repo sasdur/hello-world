@@ -3,10 +3,10 @@
     become: true
     tasks:
      #- name: stop previous version docker
-      # shell: docker stop docker-versioning-webapp-deploy
+      # shell: docker stop sasdevops_Ver_demo
 
      - name: remove stopped containers
-       shell: docker rm -f docker-versioning-webapp-deploy	  
+       shell: docker rm -f sasdevops_Ver_demo	  
 
      - name: remove docker images
        shell: docker image rm -f sasdevops/docker-versioning-webapp-deploy:latest
