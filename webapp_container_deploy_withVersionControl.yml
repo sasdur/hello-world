@@ -2,8 +2,8 @@
   - hosts: web-servers
     become: true
     tasks:
-     - name: stop previous version docker
-       shell: docker stop docker-versioning-webapp-deploy
+     #- name: stop previous version docker
+      # shell: docker stop docker-versioning-webapp-deploy
 
      - name: remove stopped containers
        shell: docker rm -f docker-versioning-webapp-deploy	  
