@@ -1,0 +1,15 @@
+---
+  - hosts: web-servers
+    become: true
+    tasks:
+     - name: stop previous version docker
+       shell: docker stop docker-versioning-webapp-deploy
+
+     - name: remove stopped containers
+       shell: docker rm -f docker-versioning-webapp-deploy	  
+
+     - name: remove docker images
+       shell: docker image rm -f sasdevops/docker-versioning-webapp-deploy:latest
+       
+     - name: create docker image
+       shell: docker run -d --name sasdevops_demo -p 8087:8080 sasdevops/docker-versioning-webapp-deploy:latest
