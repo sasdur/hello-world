@@ -3,6 +3,7 @@
 <h2> Thanks for checking our page !!!! </h2>
 <h2> Keep Checkng this page 24 X 7 </h2>
 <h2> Please let us know your comments !!! </h2>
+<h2> Please share your thoughts </h2>
 
 
 
