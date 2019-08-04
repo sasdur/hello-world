@@ -12,7 +12,7 @@ pipeline {
 
             steps {
 
-                withMaven(maven : 'maven_3.5.2') {
+                withMaven(maven : 'Maven-Master-3.0.5') {
 
                     sh 'mvn clean compile'
 
@@ -30,7 +30,7 @@ pipeline {
 
             steps {
 
-                withMaven(maven : 'maven_3.5.2') {
+                withMaven(maven : 'Maven-Master-3.0.5') {
 
                     sh 'mvn install'
 
@@ -48,7 +48,7 @@ pipeline {
 
             steps {
 
-                withMaven(maven : 'maven_3.5.2') {
+                withMaven(maven : 'Maven-Master-3.0.5') {
 
                     sh 'mvn package'
 
