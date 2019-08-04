@@ -1,6 +1,6 @@
 pipeline {
 
-    agent MasterNode
+    agent {label "MasterNode" }
 
 
 
