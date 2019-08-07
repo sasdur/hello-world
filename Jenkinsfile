@@ -77,7 +77,7 @@ pipeline {
 		stage ('Create the container with expose port 8087' ) {
 			steps {
 				
-				sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-server-tomcat-tg', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker run -d --name sasdevops_demo -p 8087:8080 sasdevops_demo', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+				sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-server-tomcat-tg', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker run -d --name sasdevops_demo -p 8087:8080 sasdevops/sasdevops_demo', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 			}
 		
 		}
