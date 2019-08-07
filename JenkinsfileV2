@@ -87,7 +87,7 @@ pipeline {
 			steps {
 				
 				sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-server-tomcat-tg', 
-				transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker run -d -p 8087:8080 sasdevops/sasdevops_demo', 
+				transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker run -d -p 8088:8080 sasdevops/sasdevops_demo', 
 				execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', 
 				remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '')], 
 				usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
