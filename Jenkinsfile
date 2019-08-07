@@ -68,17 +68,18 @@ pipeline {
 						docker tag sasdevops_demo sasdevops/sasdevops_demo
 						docker push sasdevops/sasdevops_demo
 						docker rmi sasdevops_demo sasdevops/sasdevops_demo
-						docker run -d --name sasdevops_demo -p 8085:8080 sasdevops_demo''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//opt//docker', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'Dockerfile')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+						''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//opt//docker', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'Dockerfile')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 
 			
 			}
 		}
 		
 		stage ('Create the container with expose port 8087' ) {
-			steps (
+			steps {
 					
-			
-			
+			    ''' 
+					docker run -d --name sasdevops_demo -p 8085:8080 sasdevops_demo
+				'''
 			}
 		
 		}
