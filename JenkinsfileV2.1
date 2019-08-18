@@ -83,11 +83,11 @@ pipeline {
 			}
 		}
 		
-		stage ('Run Container expose port# 8081 .' ) {
+		stage ('Run Container expose port# 8082 .' ) {
 			steps {
 				
 				sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-server-tomcat-tg', 
-				transfers: [sshTransfer(execCommand: 'docker run -d -p 8081:8080 sasdevops/sasdevops_demo')])])
+				transfers: [sshTransfer(execCommand: 'docker run -d -p 8082:8080 sasdevops/sasdevops_demo')])])
 			}
 		
 		}
