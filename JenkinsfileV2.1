@@ -83,7 +83,7 @@ pipeline {
 			}
 		}
 		
-		stage ('Create the container with expose port 8081 .' ) {
+		stage ('Run Container expose port# 8081 .' ) {
 			steps {
 				
 				sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-server-tomcat-tg', 
