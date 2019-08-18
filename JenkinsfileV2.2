@@ -65,21 +65,19 @@ pipeline {
 					transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000,
 					flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', 
 					remoteDirectory: '//opt//docker', remoteDirectorySDF: false, removePrefix: 'webapp/target', 
-					sourceFiles: 'webapp/target/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
-					
-					sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-server-tomcat-tg', 
-					transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 
-					'''cd /opt/docker
-						docker build -t sasdevops_demo .
-						docker tag sasdevops_demo sasdevops/sasdevops_demo
-						docker push sasdevops/sasdevops_demo
-						docker rmi sasdevops_demo sasdevops/sasdevops_demo''', 
-					execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, 
-					patternSeparator: '[, ]+', remoteDirectory: '//opt//docker', remoteDirectorySDF: false, 
-					removePrefix: '', sourceFiles: 'Dockerfile')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, 
-					verbose: false)])
+					sourceFiles: 'webapp/target/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])cd /opt/docker
 
-			
+
+				sh """
+				    cd /opt/docker
+					docker build -t $JOB_NAME:v1.$BUILD_ID .
+					docker tag $JOB_NAME:v1.$BUILD_ID sasdevops/$JOB_NAME:v1.$BUILD_ID
+					docker tag $JOB_NAME:v1.$BUILD_ID sasdevops/$JOB_NAME:latest
+					docker push sasdevops/$JOB_NAME:v1.$BUILD_ID
+					docker push sasdevops/$JOB_NAME:latest
+					docker rmi $JOB_NAME:v1.$BUILD_ID sasdevops/$JOB_NAME:v1.$BUILD_ID sasdevops/$JOB_NAME:latest
+				"""
+					
 			}
 		}
 		
@@ -87,7 +85,7 @@ pipeline {
 			steps {
 				
 				sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-server-tomcat-tg', 
-				transfers: [sshTransfer(execCommand: 'docker run -d -p 8081:8080 sasdevops/sasdevops_demo')])])
+				transfers: [sshTransfer(execCommand: 'docker run -d -p 8081:8080 sasdevops/$JOB_NAME:v1.$BUILD_ID')])])
 			}
 		
 		}
