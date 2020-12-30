@@ -1,18 +1,3 @@
 <h1> Docker  -- Deployment  (via ) CICD pipeline with the Versioning</h1>
 <h2> Testing Deployment every 2 minutes/ 24 X7 whenever there is change !!! </h2>
 <h2> Thanks for checking our page !!!! </h2>
-<h2> Keep Checkng this page 24 X 7 </h2>
-<h2> Please let us know your comments !!! </h2>
-<h2> Please share your thoughts </h2>
-<h2> call us @1-800-000-0000 for reporting errors </h2>
-<h2> Dont call us !! </h2>
-
-
-<h2> Thank you </h2>
-<h2> +++++++++++++++++++++++++++++++++++++</h2>
-n =  new Date();
-y = n.getFullYear();
-m = n.getMonth() + 1;
-d = n.getDate();
-<h2> +++++++++++++++++++++++++++++++++++++</h2>
-
